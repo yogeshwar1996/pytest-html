@@ -620,7 +620,8 @@ class HTMLReport:
 
     def pytest_runtest_logreport(self, report):
         if report.passed:
-            self.append_passed(report)
+            # self.append_passed(report)
+            pass
         elif report.failed:
             self.append_failed(report)
         elif report.skipped:
