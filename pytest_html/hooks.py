@@ -21,3 +21,5 @@ def pytest_html_results_table_row(report, cells):
 
 def pytest_html_results_table_html(report, data):
     """ Called after building results table additional HTML. """
+    if report.passed:
+        del data[:]

@@ -169,7 +169,7 @@ class HTMLReport:
             for extra_index, extra in enumerate(getattr(report, "extra", [])):
                 self.append_extra_html(extra, extra_index, test_index)
 
-            # self.append_log_html(report, self.additional_html)
+            self.append_log_html(report, self.additional_html)
 
             cells = [
                 html.td(self.outcome, class_="col-result"),
