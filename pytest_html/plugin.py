@@ -169,7 +169,7 @@ class HTMLReport:
             for extra_index, extra in enumerate(getattr(report, "extra", [])):
                 self.append_extra_html(extra, extra_index, test_index)
 
-            self.append_log_html(report, self.additional_html)
+            # self.append_log_html(report, self.additional_html)
 
             cells = [
                 html.td(self.outcome, class_="col-result"),
@@ -620,8 +620,7 @@ class HTMLReport:
 
     def pytest_runtest_logreport(self, report):
         if report.passed:
-            # self.append_passed(report)
-            pass
+            self.append_passed(report)
         elif report.failed:
             self.append_failed(report)
         elif report.skipped:
