@@ -276,6 +276,8 @@ class HTMLReport:
 
         def append_log_html(self, report, additional_html):
             log = html.div(class_="log")
+            if report.passed:
+                return
             if report.longrepr:
                 for line in report.longreprtext.splitlines():
                     separator = line.startswith("_ " * 10)
